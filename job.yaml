@@ -4,17 +4,17 @@ metadata:
   name: hola-mundo-job
   namespace: guscontre-dev
 spec:
+  completitions: 10
+  parallelism: 3
   template:
     spec:
-    completitions: 30
-    parallelism: 3
-    template:
       containers:
         - name: hola-mundo
           image: busybox:latest
           command: ["/bin/sh", "-c"]
           args:
           - |
+            sleep 60
             echo "hola mundo"
       restartPolicy: Never
   backoffLimit: 2  # Número de reintentos en caso de fallo
