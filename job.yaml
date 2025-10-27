@@ -6,6 +6,9 @@ metadata:
 spec:
   template:
     spec:
+    completitions: 30
+    parallelism: 3
+    template:
       containers:
         - name: hola-mundo
           image: busybox:latest
